@@ -1,0 +1,196 @@
+@import "nullstyle.scss";
+
+.app {
+}
+.head {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(46, 46, 46);
+  transition: all 1s;
+}
+.head.active {
+  background-color: rgb(0, 0, 0);
+}
+.head_body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px 0 15px;
+}
+.head_logo {
+  font-size: 32px;
+  color: white;
+}
+.head_nav {
+  display: flex;
+  position: relative;
+  align-items: center;
+  .head_items {
+    margin-left: 15px;
+    color: white;
+    font-size: 16px;
+  }
+}
+.head_burger {
+  display: none;
+  background: url(https://c0.klipartz.com/pngpicture/517/126/gratis-png-cafe-hamburguesa-boton-menu-computadora-iconos-menu.png);
+  background-size: 100% 100%;
+  background-color: inherit;
+  width: 40px;
+  height: 40px;
+  transition: all 0.5s;
+}
+.head_burger:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 750px) {
+  .head_nav {
+    display: none;
+  }
+  .head_burger {
+    display: block;
+  }
+}
+@media (min-width:751px){
+  .burger_menu {display:none;}
+}
+.head_burger.active {
+  transform: rotate(90deg);
+}
+.burger_menu {
+  margin-top: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+
+  .head_items {
+    color: white;
+    font-size: 32px;
+    padding: 20px 15px;
+  }
+}
+.burger_menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+.main {
+}
+.main_body {
+  height: 500px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_calc {
+  width: 250px;
+  height: 400px;
+  background-color: rgb(43, 148, 161);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+.calc_input {
+  width: 100%;
+  height: 100px;
+  textarea {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    resize: none;
+  }
+}
+.calc_numbers {
+  -moz-user-select: none;
+  height: 100%;
+  max-height: 250px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
+.call_number {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+.number_numbers {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  gap: 1rem;
+}
+.calc_item {
+  // width:33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: calc((100% / 3) - 1rem);
+}
+.call_operation {
+  width: 25%;
+  color: rgb(43, 148, 161);
+
+  background-color: rgb(228, 228, 228);
+  height: 100%;
+  .calc_item {
+    width: 100%;
+    height: 20%;
+  }
+}
+.number_operation {
+  width: 100%;
+  color: rgb(43, 148, 161);
+  height: 25%;
+  background-color: rgb(228, 228, 228);
+  display: flex;
+}
+.number_clear {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.number_back {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.pointer {
+  cursor: pointer;
+}
+.calc_items {
+  height: 40%;
+  background-color: rgb(114, 65, 65);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

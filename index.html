@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="head">
+        <div class="head_body container">
+          <div class="head_logo">LOGO</div>
+          <div class="head_nav">
+            <div class="head_items">Пункт 1</div>
+            <div class="head_items">Пункт 2</div>
+            <div class="head_items">Пункт 3</div>
+          </div>
+          <div class="head_burger" v-on:click="menuBurger"></div>
+          <div class="burger_menu">
+            <div class="head_items">Пункт 1</div>
+            <div class="head_items">Пункт 2</div>
+            <div class="head_items">Пункт 3</div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="main_body container">
+          <div class="main_calc">
+            <div class="calc_input">
+              <textarea v-model="result"></textarea>
+            </div>
+            <div class="calc_numbers">
+              <div class="call_number">
+                <div class="number_operation">
+                  <div class="calc_item pointer" v-on:click="clearAll">AC</div>
+                  <div
+                    class="calc_item pointer"
+                    v-for="oper in operat"
+                    v-on:click="item(oper)"
+                  >
+                    {{oper}}
+                  </div>
+                </div>
+                <div class="number_numbers">
+                  <div
+                    class="calc_item pointer"
+                    v-for="number in numbers"
+                    v-on:click="item(number)"
+                  >
+                    {{number}}
+                  </div>
+                </div>
+              </div>
+              <div class="call_operation">
+                <div class="calc_item pointer" v-on:click="back"><-</div>
+                <div
+                  class="calc_item pointer"
+                  v-for="op in operations"
+                  v-on:click="item(op)"
+                >
+                  {{op}}
+                </div>
+                <div class="calc_items pointer" v-on:click="calcAll">=</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
